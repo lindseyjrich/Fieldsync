@@ -252,12 +252,12 @@ function gisLoaded() {
 }
 function maybeEnable() {
   if (!gapiReady || !gisReady) return;
-  const saved = localStorage.getItem('fs_token');
-  if (saved) { gapi.client.setToken(JSON.parse(saved)); showApp(); loadSheet(); }
+  // Don't auto-restore — always require fresh sign-in to ensure correct scopes
+  localStorage.removeItem('fs_token');
 }
 function signIn() {
   if (!CLIENT_ID || !SHEET_ID) return alert('Please fill in the Setup section first.');
-  tokenClient.requestAccessToken({ prompt: '' });
+  tokenClient.requestAccessToken({ prompt: 'consent' });
 }
 function handleToken(resp) {
   if (resp.error) { console.error(resp); return; }
