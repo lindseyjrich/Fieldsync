@@ -17,13 +17,7 @@
     }
     body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
 
-    .header {
-      position: sticky; top: 0; z-index: 200;
-      background: rgba(13,15,20,0.95); backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 20px; height: 58px;
-    }
+    .header { position: sticky; top: 0; z-index: 200; background: rgba(13,15,20,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 20px; height: 58px; }
     .logo { display: flex; align-items: center; gap: 10px; }
     .logo-icon { width: 34px; height: 34px; border-radius: 9px; background: linear-gradient(135deg, #4A8EF5, #1a56db); display: flex; align-items: center; justify-content: center; font-size: 17px; box-shadow: 0 0 16px rgba(74,142,245,0.3); }
     .logo-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 22px; letter-spacing: 0.5px; }
@@ -34,24 +28,28 @@
     .role-btn.active-field { background: var(--amber); color: #000; }
     .signout-btn { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 12px; font-family: 'DM Sans', sans-serif; }
 
+    /* AUTH */
     #auth-screen { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: calc(100vh - 58px); padding: 32px 20px; text-align: center; }
     .auth-card { background: var(--surface); border: 1px solid var(--border2); border-radius: 20px; padding: 40px 32px; max-width: 440px; width: 100%; }
     .auth-icon { font-size: 48px; margin-bottom: 20px; }
     .auth-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 30px; margin-bottom: 10px; }
     .auth-desc { color: var(--muted); font-size: 14px; line-height: 1.6; margin-bottom: 28px; }
     .gcal-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 14px; border-radius: 12px; background: #fff; color: #1a1a1a; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 15px; transition: all 0.2s; box-shadow: 0 2px 12px rgba(0,0,0,0.3); margin-bottom: 10px; }
-    .gcal-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+    .gcal-btn:hover { transform: translateY(-1px); }
     .config-section { margin-top: 24px; border-top: 1px solid var(--border); padding-top: 24px; text-align: left; }
     .config-section h3 { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px; }
-    .config-input { width: 100%; background: var(--bg); border: 1px solid var(--border2); border-radius: 8px; padding: 10px 12px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 13px; outline: none; transition: border-color 0.15s; margin-bottom: 8px; }
+    .config-input { width: 100%; background: var(--bg); border: 1px solid var(--border2); border-radius: 8px; padding: 10px 12px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 13px; outline: none; margin-bottom: 8px; }
     .config-input:focus { border-color: var(--blue); }
     .config-save { width: 100%; padding: 10px; border-radius: 8px; border: none; cursor: pointer; background: var(--blue); color: #fff; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 13px; }
 
+    /* APP */
     #app-screen { display: none; max-width: 700px; margin: 0 auto; padding: 20px 16px; }
     #detail-screen { display: none; max-width: 700px; margin: 0 auto; padding: 20px 16px; }
 
-    .sheet-banner { background: var(--green-dim); border: 1px solid rgba(46,204,113,0.2); border-radius: 10px; padding: 10px 14px; font-size: 12px; color: #5EE89A; margin-bottom: 18px; display: flex; align-items: center; gap: 8px; }
-    .error-banner { background: var(--red-dim); border: 1px solid rgba(231,76,60,0.2); border-radius: 10px; padding: 10px 14px; font-size: 12px; color: #F08080; margin-bottom: 18px; }
+    .banner { border-radius: 10px; padding: 10px 14px; font-size: 12px; margin-bottom: 16px; }
+    .banner-green { background: var(--green-dim); border: 1px solid rgba(46,204,113,0.2); color: #5EE89A; }
+    .banner-red { background: var(--red-dim); border: 1px solid rgba(231,76,60,0.2); color: #F08080; }
+    .banner-blue { background: var(--blue-dim); border: 1px solid rgba(74,142,245,0.2); color: #8BAEF5; }
 
     .stats-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 20px; }
     .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px; text-align: center; }
@@ -63,38 +61,41 @@
     .filter-btn { padding: 6px 14px; border-radius: 8px; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 12px; background: transparent; color: var(--muted); transition: all 0.15s; }
     .filter-btn.active { background: var(--surface2); color: var(--text); }
     .filter-select { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 6px 12px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; outline: none; }
-    .sync-btn { margin-left: auto; background: var(--blue-dim); border: 1px solid rgba(74,142,245,0.25); color: var(--blue); border-radius: 10px; padding: 6px 14px; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; cursor: pointer; transition: all 0.2s; }
+    .sync-btn { margin-left: auto; background: var(--blue-dim); border: 1px solid rgba(74,142,245,0.25); color: var(--blue); border-radius: 10px; padding: 6px 14px; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; cursor: pointer; }
     .sync-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
-    .job-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px 18px 18px 22px; cursor: pointer; transition: border-color 0.15s, transform 0.1s; position: relative; overflow: hidden; margin-bottom: 10px; }
+    /* Day header */
+    .day-header { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 20px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin: 20px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+    .day-header:first-child { margin-top: 0; }
+
+    /* Job cards */
+    .job-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px 16px 16px 20px; cursor: pointer; transition: border-color 0.15s, transform 0.1s; position: relative; overflow: hidden; margin-bottom: 8px; }
     .job-card:hover { border-color: var(--blue); transform: translateY(-1px); }
-    .job-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; }
-    .priority-high::before { background: var(--red); }
-    .priority-medium::before { background: var(--amber); }
-    .priority-low::before { background: var(--green); }
-    .job-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px; }
-    .job-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; line-height: 1.2; }
-    .job-meta { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
-    .job-address { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
-    .job-footer { display: flex; gap: 12px; font-size: 12px; color: var(--muted); }
+    .job-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--blue); }
+    .job-card.has-pm::before { background: linear-gradient(to bottom, var(--blue) 50%, var(--amber) 50%); }
+    .job-crew { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 20px; margin-bottom: 6px; }
+    .job-task { font-size: 13px; color: #C4C8DC; line-height: 1.45; margin-bottom: 4px; }
+    .job-task-label { font-size: 10px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 2px; }
+    .job-footer { display: flex; gap: 10px; font-size: 12px; color: var(--muted); margin-top: 8px; }
 
     .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; white-space: nowrap; }
     .badge-scheduled { background: var(--blue-dim); color: var(--blue); }
     .badge-in-progress { background: var(--amber-dim); color: var(--amber); }
     .badge-completed { background: var(--green-dim); color: var(--green); }
 
+    /* DETAIL */
     .back-btn { display: flex; align-items: center; gap: 6px; background: none; border: none; color: var(--blue); cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; margin-bottom: 20px; }
     .detail-header { background: var(--surface); border-radius: 16px; padding: 22px; border: 1px solid var(--border2); margin-bottom: 14px; }
-    .detail-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 26px; margin: 10px 0 14px; line-height: 1.2; }
-    .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .detail-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #9099B8; }
+    .detail-crew { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 28px; margin-bottom: 6px; }
+    .detail-day { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
 
-    .tabs { display: flex; gap: 3px; background: var(--surface); border-radius: 12px; padding: 4px; border: 1px solid var(--border); margin-bottom: 14px; }
-    .tab-btn { flex: 1; padding: 8px; border-radius: 9px; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 12px; background: transparent; color: var(--muted); transition: all 0.15s; }
-    .tab-btn.active { background: var(--surface2); color: var(--text); }
+    .task-block { background: var(--surface2); border-radius: 10px; padding: 14px; margin-bottom: 10px; }
+    .task-time-label { font-size: 10px; font-weight: 800; color: var(--blue); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
+    .task-time-label.pm { color: var(--amber); }
+    .task-text { font-size: 14px; color: #C4C8DC; line-height: 1.5; }
 
     .section-card { background: var(--surface); border-radius: 12px; padding: 18px; border: 1px solid var(--border); margin-bottom: 12px; }
-    .section-label { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 12px; display: flex; align-items: center; }
+    .section-label { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
 
     .status-row { display: flex; gap: 8px; flex-wrap: wrap; }
     .status-btn { padding: 8px 16px; border-radius: 9px; border: 2px solid var(--border2); background: transparent; color: var(--muted); cursor: pointer; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 12px; transition: all 0.15s; }
@@ -102,9 +103,9 @@
     .status-btn.active-progress { border-color: var(--amber); background: var(--amber-dim); color: var(--amber); }
     .status-btn.active-completed { border-color: var(--green); background: var(--green-dim); color: var(--green); }
 
-    .saving-indicator { font-size: 11px; color: var(--muted); margin-left: 10px; font-weight: 400; text-transform: none; letter-spacing: 0; }
-    .saving-indicator.saving { color: var(--amber); }
-    .saving-indicator.saved { color: var(--green); }
+    .saving-pill { font-size: 11px; color: var(--muted); font-weight: 400; text-transform: none; letter-spacing: 0; }
+    .saving-pill.saving { color: var(--amber); }
+    .saving-pill.saved { color: var(--green); }
 
     .note-card { background: var(--surface); border-radius: 12px; padding: 14px; border: 1px solid var(--border); margin-bottom: 10px; }
     .note-header { display: flex; justify-content: space-between; margin-bottom: 8px; }
@@ -113,20 +114,23 @@
     .note-author.field { color: var(--amber); }
     .note-time { font-size: 11px; color: var(--muted); }
     .note-text { font-size: 14px; color: #C4C8DC; line-height: 1.55; }
-
     .note-input-area { background: var(--surface); border-radius: 12px; padding: 16px; border: 1px solid var(--border); }
-    textarea.note-input { width: 100%; background: var(--bg); border: 1px solid var(--border2); border-radius: 8px; padding: 10px 12px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 14px; resize: vertical; min-height: 80px; outline: none; transition: border-color 0.15s; }
+    textarea.note-input { width: 100%; background: var(--bg); border: 1px solid var(--border2); border-radius: 8px; padding: 10px 12px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 14px; resize: vertical; min-height: 80px; outline: none; }
     textarea.note-input:focus { border-color: var(--blue); }
-    .post-btn { margin-top: 10px; width: 100%; padding: 11px; border-radius: 9px; border: none; background: linear-gradient(135deg, #4A8EF5, #1a56db); color: #fff; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 14px; cursor: pointer; transition: opacity 0.2s; }
-    .post-btn:hover { opacity: 0.88; }
+    .post-btn { margin-top: 10px; width: 100%; padding: 11px; border-radius: 9px; border: none; background: linear-gradient(135deg, #4A8EF5, #1a56db); color: #fff; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 14px; cursor: pointer; }
     .post-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
     .directions-btn { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #4A8EF5, #1a56db); color: #fff; padding: 11px 20px; border-radius: 9px; text-decoration: none; font-weight: 700; font-size: 14px; }
 
-    .empty { text-align: center; color: var(--muted); padding: 48px 20px; font-size: 14px; line-height: 1.6; }
-    .loading { text-align: center; padding: 60px 20px; color: var(--muted); }
-    .spinner { display: inline-block; width: 28px; height: 28px; border: 3px solid var(--border2); border-top-color: var(--blue); border-radius: 50%; animation: spin 0.8s linear infinite; margin-bottom: 14px; }
+    .tabs { display: flex; gap: 3px; background: var(--surface); border-radius: 12px; padding: 4px; border: 1px solid var(--border); margin-bottom: 14px; }
+    .tab-btn { flex: 1; padding: 8px; border-radius: 9px; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 12px; background: transparent; color: var(--muted); transition: all 0.15s; }
+    .tab-btn.active { background: var(--surface2); color: var(--text); }
+
+    .empty { text-align: center; color: var(--muted); padding: 40px 20px; font-size: 14px; line-height: 1.7; }
+    .spinner { display: inline-block; width: 26px; height: 26px; border: 3px solid var(--border2); border-top-color: var(--blue); border-radius: 50%; animation: spin 0.8s linear infinite; margin-bottom: 12px; }
     @keyframes spin { to { transform: rotate(360deg); } }
+
+    .off-badge { display: inline-block; background: var(--red-dim); color: var(--red); padding: 2px 8px; border-radius: 6px; font-size: 11px; font-weight: 700; margin-left: 6px; }
   </style>
 </head>
 <body>
@@ -149,19 +153,18 @@
 <!-- AUTH -->
 <div id="auth-screen">
   <div class="auth-card">
-    <div class="auth-icon">📊</div>
-    <div class="auth-title">Connect Your Sheet</div>
-    <div class="auth-desc">FieldSync reads your Google Sheets job schedule and syncs status updates and notes back — your sheet stays as the source of truth.</div>
+    <div class="auth-icon">📋</div>
+    <div class="auth-title">TD FieldSync</div>
+    <div class="auth-desc">Connects directly to your weekly schedule spreadsheet so the crew always knows where they're going and what they're doing.</div>
     <button class="gcal-btn" onclick="signIn()">
       <img src="https://www.google.com/favicon.ico" width="22" height="22" alt="G" />
       Sign in with Google
     </button>
     <div class="config-section">
       <h3>⚙️ Setup</h3>
-      <p style="font-size:12px;color:var(--muted);margin-bottom:10px;">Enter your Google OAuth Client ID and your scheduling spreadsheet ID.</p>
-      <input class="config-input" id="client-id-input" placeholder="OAuth Client ID (.apps.googleusercontent.com)" />
-      <input class="config-input" id="sheet-id-input" placeholder="Google Sheet ID (from the sheet URL)" />
-      <p style="font-size:11px;color:var(--muted);margin-bottom:10px;">The Sheet ID is the long string in your sheet's URL:<br><code style="color:#8BAEF5;">spreadsheets/d/<strong>THIS_PART</strong>/edit</code></p>
+      <input class="config-input" id="client-id-input" placeholder="OAuth Client ID" />
+      <input class="config-input" id="sheet-id-input" placeholder="Google Sheet ID" />
+      <p style="font-size:11px;color:var(--muted);margin-bottom:10px;">Sheet ID from URL: spreadsheets/d/<strong style="color:#8BAEF5;">THIS_PART</strong>/edit</p>
       <button class="config-save" onclick="saveConfig()">Save & Enable Sign In</button>
     </div>
   </div>
@@ -169,77 +172,77 @@
 
 <!-- APP LIST -->
 <div id="app-screen">
-  <div id="sheet-banner" class="sheet-banner" style="display:none;"></div>
-  <div id="error-banner" class="error-banner" style="display:none;"></div>
+  <div id="main-banner" style="display:none;"></div>
 
   <div class="stats-row">
-    <div class="stat-card"><div class="stat-num" id="stat-today" style="color:var(--blue);">—</div><div class="stat-label">Today's Jobs</div></div>
+    <div class="stat-card"><div class="stat-num" id="stat-crews" style="color:var(--blue);">—</div><div class="stat-label">Crews Out</div></div>
     <div class="stat-card"><div class="stat-num" id="stat-progress" style="color:var(--amber);">—</div><div class="stat-label">In Progress</div></div>
     <div class="stat-card"><div class="stat-num" id="stat-done" style="color:var(--green);">—</div><div class="stat-label">Completed</div></div>
   </div>
 
   <div class="filters">
     <div class="filter-group">
-      <button class="filter-btn active" id="f-today" onclick="setDateFilter('today',this)">Today</button>
-      <button class="filter-btn" id="f-tomorrow" onclick="setDateFilter('tomorrow',this)">Tomorrow</button>
-      <button class="filter-btn" id="f-week" onclick="setDateFilter('week',this)">All</button>
+      <button class="filter-btn active" id="f-today" onclick="setDayFilter('today',this)">Today</button>
+      <button class="filter-btn" id="f-week" onclick="setDayFilter('week',this)">Full Week</button>
     </div>
-    <select class="filter-select" id="worker-filter" onchange="renderJobs()"><option>All Workers</option></select>
+    <select class="filter-select" id="crew-filter" onchange="renderJobs()"><option>All Crew</option></select>
     <button class="sync-btn" id="sync-btn" onclick="loadSheet()">↻ Sync</button>
   </div>
 
-  <div id="job-list"><div class="loading"><div class="spinner"></div><br>Loading jobs...</div></div>
+  <div id="job-list"><div class="empty"><div class="spinner"></div><br>Loading schedule...</div></div>
 </div>
 
 <!-- DETAIL -->
 <div id="detail-screen">
-  <button class="back-btn" onclick="showList()">← Back to Jobs</button>
+  <button class="back-btn" onclick="showList()">← Back</button>
   <div class="detail-header">
-    <div id="detail-badges" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;"></div>
-    <div class="detail-title" id="detail-title"></div>
-    <div class="detail-grid" id="detail-meta"></div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;">
+      <div>
+        <div class="detail-crew" id="detail-crew"></div>
+        <div class="detail-day" id="detail-day"></div>
+      </div>
+      <span class="badge" id="detail-status-badge"></span>
+    </div>
   </div>
+
   <div class="tabs">
-    <button class="tab-btn active" id="tab-details" onclick="setTab('details')">📋 Details</button>
+    <button class="tab-btn active" id="tab-tasks" onclick="setTab('tasks')">📋 Tasks</button>
     <button class="tab-btn" id="tab-notes" onclick="setTab('notes')">💬 Notes</button>
   </div>
-  <div id="tab-content-details"></div>
+  <div id="tab-content-tasks"></div>
   <div id="tab-content-notes" style="display:none;"></div>
 </div>
 
 <script>
 const SCOPES = 'https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/userinfo.profile';
-const SHEETS_DISCOVERY = 'https://sheets.googleapis.com/$discovery/rest?version=v4';
+const DISC   = 'https://sheets.googleapis.com/$discovery/rest?version=v4';
 
 let CLIENT_ID = localStorage.getItem('fs_client_id') || '';
-let SHEET_ID = localStorage.getItem('fs_sheet_id') || '';
-let tokenClient = null;
-let gapiReady = false, gisReady = false;
-let currentRole = 'office';
-let currentTab = 'details';
-let dateFilter = 'today';
-let jobs = [];
-let currentJobIdx = null;
-let currentTabName = '';
+let SHEET_ID  = localStorage.getItem('fs_sheet_id')  || '';
+let tokenClient = null, gapiReady = false, gisReady = false;
+let currentRole = 'office', currentTab = 'tasks', dayFilter = 'today';
+let jobs = [], currentJobIdx = null, currentTabName = '';
+// Local storage for notes and statuses (keyed by day+crew)
+let localNotes    = JSON.parse(localStorage.getItem('fs_notes')    || '{}');
+let localStatuses = JSON.parse(localStorage.getItem('fs_statuses') || '{}');
 
 if (CLIENT_ID) document.getElementById('client-id-input').value = CLIENT_ID;
-if (SHEET_ID) document.getElementById('sheet-id-input').value = SHEET_ID;
+if (SHEET_ID)  document.getElementById('sheet-id-input').value  = SHEET_ID;
 
 function saveConfig() {
-  const cid = document.getElementById('client-id-input').value.trim();
-  const sid = document.getElementById('sheet-id-input').value.trim();
-  if (!cid || !sid) return alert('Please enter both the Client ID and Sheet ID.');
-  CLIENT_ID = cid; SHEET_ID = sid;
-  localStorage.setItem('fs_client_id', cid);
-  localStorage.setItem('fs_sheet_id', sid);
-  alert('Saved! Refreshing...');
-  location.reload();
+  const c = document.getElementById('client-id-input').value.trim();
+  const s = document.getElementById('sheet-id-input').value.trim();
+  if (!c || !s) return alert('Please enter both IDs.');
+  CLIENT_ID = c; SHEET_ID = s;
+  localStorage.setItem('fs_client_id', c);
+  localStorage.setItem('fs_sheet_id', s);
+  alert('Saved! Refreshing...'); location.reload();
 }
 
 function gapiLoaded() {
   gapi.load('client', async () => {
     if (!CLIENT_ID) return;
-    await gapi.client.init({ discoveryDocs: [SHEETS_DISCOVERY] });
+    await gapi.client.init({ discoveryDocs: [DISC] });
     gapiReady = true; maybeEnable();
   });
 }
@@ -252,8 +255,7 @@ function gisLoaded() {
 }
 function maybeEnable() {
   if (!gapiReady || !gisReady) return;
-  // Don't auto-restore — always require fresh sign-in to ensure correct scopes
-  localStorage.removeItem('fs_token');
+  localStorage.removeItem('fs_token'); // always fresh sign-in for correct scopes
 }
 function signIn() {
   if (!CLIENT_ID || !SHEET_ID) return alert('Please fill in the Setup section first.');
@@ -287,215 +289,242 @@ async function showApp() {
   } catch(e) {}
 }
 
-// Find the tab whose date range covers today
-function getCurrentWeekTab(titles) {
+// ── FIND CURRENT WEEK TAB ─────────────────────────────────────
+function findCurrentTab(titles) {
   const now = new Date();
-  const months = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
-  for (const title of titles) {
-    const m = title.match(/([A-Za-z]+)\s+(\d+)\s*[-–]\s*(?:[A-Za-z]+\s*)?(\d+)/);
+  const nowM = now.getMonth() + 1;
+  const nowD = now.getDate();
+
+  for (const t of titles) {
+    // Match "M.D-M.D" or "M.D-M.D.YY" e.g. "3.10-3.14" or "1.6-1.10.24"
+    const m = t.match(/^(\d+)\.(\d+)\s*[-–]\s*(\d+)\.(\d+)/);
     if (!m) continue;
-    const mIdx = months.indexOf(m[1].substring(0,3).toLowerCase());
-    if (mIdx === -1) continue;
-    const start = new Date(now.getFullYear(), mIdx, parseInt(m[2]));
-    const end = new Date(now.getFullYear(), mIdx, parseInt(m[3]), 23, 59, 59);
-    if (now >= start && now <= end) return title;
+    const sm = parseInt(m[1]), sd = parseInt(m[2]);
+    const em = parseInt(m[3]), ed = parseInt(m[4]);
+    const year = now.getFullYear();
+    const start = new Date(year, sm-1, sd);
+    const end   = new Date(year, em-1, ed, 23, 59, 59);
+    if (now >= start && now <= end) return t;
   }
-  // Fallback: last tab with a date range pattern
-  for (let i = titles.length - 1; i >= 0; i--) {
-    if (/[A-Za-z]+\s+\d+\s*[-–]/.test(titles[i])) return titles[i];
+  // Fallback: last tab matching pattern
+  for (let i = titles.length-1; i >= 0; i--) {
+    if (/^\d+\.\d+/.test(titles[i])) return titles[i];
   }
-  return titles[titles.length - 1];
+  return titles[titles.length-1];
 }
 
+// ── LOAD SHEET ────────────────────────────────────────────────
 async function loadSheet() {
   const btn = document.getElementById('sync-btn');
   btn.textContent = '↻ Syncing...'; btn.disabled = true;
-  hideError();
+  setBanner('', '');
+
   try {
     const meta = await gapi.client.sheets.spreadsheets.get({ spreadsheetId: SHEET_ID });
     const titles = meta.result.sheets.map(s => s.properties.title);
-    currentTabName = getCurrentWeekTab(titles);
+    currentTabName = findCurrentTab(titles);
 
     const data = await gapi.client.sheets.spreadsheets.values.get({
       spreadsheetId: SHEET_ID,
-      range: `'${currentTabName}'!A1:Z500`
+      range: `'${currentTabName}'!A1:F100`
     });
 
     const rows = data.result.values || [];
-    if (rows.length < 2) {
-      showError(`No data found in tab "${currentTabName}". Make sure it has a header row and job data.`);
-      jobs = [];
-    } else {
-      jobs = parseRows(rows);
-      populateWorkerFilter();
-      updateStats();
-    }
-    showBanner(`📊 Tab: <strong>${currentTabName}</strong> &nbsp;·&nbsp; ${jobs.length} jobs loaded`);
+    jobs = parseSchedule(rows);
+
+    // Merge local statuses and notes
+    jobs.forEach(j => {
+      const key = jobKey(j);
+      if (localStatuses[key]) j.status = localStatuses[key];
+      if (localNotes[key]) j.notes = localNotes[key];
+    });
+
+    populateCrewFilter();
+    updateStats();
+    setBanner(`📊 Week of <strong>${currentTabName}</strong> &nbsp;·&nbsp; ${jobs.length} assignments`, 'green');
     renderJobs();
   } catch(e) {
     console.error(e);
-    showError('Could not load sheet: ' + (e.result?.error?.message || e.message || 'Unknown error'));
+    setBanner('⚠️ Could not load sheet: ' + (e.result?.error?.message || e.message || 'Unknown error'), 'red');
   }
   btn.textContent = '↻ Sync'; btn.disabled = false;
 }
 
-function parseRows(rows) {
-  const header = rows[0].map(h => (h||'').toLowerCase().trim());
-  const col = (...kws) => { for (const kw of kws) { const i = header.findIndex(h => h.includes(kw)); if (i !== -1) return i; } return -1; };
+// ── PARSE YOUR SPECIFIC SHEET FORMAT ─────────────────────────
+// Format: Day headers like "Monday 1.5", then rows with CREW | AM task | PM task | LOCATION | Equipment
+function parseSchedule(rows) {
+  const results = [];
+  let currentDay = '';
+  let currentDayDate = '';
+  let inDaySection = false;
 
-  const cJob   = col('job','work order','title','name','task','description');
-  const cDate  = col('date','day','scheduled');
-  const cTime  = col('time','start');
-  const cWho   = col('assign','worker','tech','crew','employee','staff');
-  const cAddr  = col('address','location','site','place');
-  const cStat  = col('status','state');
-  const cNotes = col('note','comment','detail','instruction');
-  const cPri   = col('priority','urgent','level');
+  const dayNames = ['monday','tuesday','wednesday','thursday','friday','saturday','sunday'];
 
-  return rows.slice(1).map((r, i) => {
-    if (!r || r.every(c => !c)) return null;
-    const title = (cJob >= 0 ? r[cJob] : r[0] || '').trim();
-    if (!title) return null;
-    return {
-      rowIndex: i + 2,
-      title,
-      date:     cDate  >= 0 ? (r[cDate]  || '') : '',
-      time:     cTime  >= 0 ? (r[cTime]  || '') : '',
-      assignee: cWho   >= 0 ? (r[cWho]   || '') : '',
-      address:  cAddr  >= 0 ? (r[cAddr]  || '') : '',
-      status:   normalizeStatus(cStat  >= 0 ? (r[cStat]  || '') : ''),
-      notes:    parseNotes(cNotes >= 0 ? (r[cNotes] || '') : ''),
-      priority: normalizePriority(cPri >= 0 ? (r[cPri] || '') : ''),
-      _cStat: cStat, _cNotes: cNotes,
-    };
-  }).filter(Boolean);
+  for (let i = 0; i < rows.length; i++) {
+    const row = rows[i] || [];
+    const colA = (row[0] || '').trim();
+    const colB = (row[1] || '').trim();
+    const colC = (row[2] || '').trim();
+    const colD = (row[3] || '').trim();
+
+    if (!colA) continue;
+
+    // Detect day header rows like "Monday 1.5" or "Tuesday: 1.6"
+    const dayMatch = dayNames.some(d => colA.toLowerCase().startsWith(d));
+    if (dayMatch) {
+      currentDay = colA.replace(':', '').trim();
+      // Extract date part like "1.5" or "1.6"
+      const dateM = colA.match(/(\d+)[./](\d+)/);
+      currentDayDate = dateM ? `${dateM[1]}/${dateM[2]}` : '';
+      inDaySection = true;
+      continue;
+    }
+
+    // Skip header rows (CREW, 8am-12pm etc)
+    if (colA.toUpperCase() === 'CREW' || colA.toUpperCase().startsWith('8 AM') || colA.toUpperCase().startsWith('8AM')) continue;
+
+    // Skip notes/delivery/off rows as job cards but capture them
+    if (colA.toLowerCase().startsWith('deliveries') || colA.toLowerCase().startsWith('notes')) continue;
+    if (colA.toLowerCase().startsWith('if rain')) continue;
+
+    // OFF row — we'll note who's off
+    if (colA.toUpperCase() === 'OFF:') continue;
+
+    // Actual crew assignment row
+    if (inDaySection && currentDay && colA && (colB || colC)) {
+      results.push({
+        id: `${currentDay}-${colA}`,
+        day: currentDay,
+        date: currentDayDate,
+        crew: colA,
+        amTask: colB,
+        pmTask: colC,
+        location: colD,
+        status: 'scheduled',
+        notes: [],
+      });
+    }
+  }
+  return results;
 }
 
-function normalizeStatus(s) {
-  s = s.toLowerCase();
-  if (s.includes('progress') || s === 'active' || s === 'started') return 'in-progress';
-  if (s.includes('complet') || s === 'done' || s === 'finished') return 'completed';
-  return 'scheduled';
+function jobKey(j) { return `${j.day}||${j.crew}`; }
+
+// ── TODAY DETECTION ───────────────────────────────────────────
+function getTodayDayName() {
+  return new Date().toLocaleDateString('en-US', {weekday:'long'});
 }
-function normalizePriority(p) {
-  p = p.toLowerCase();
-  if (p.includes('high') || p === 'urgent') return 'high';
-  if (p.includes('low')) return 'low';
-  return 'medium';
+function getTodayDate() {
+  const n = new Date();
+  return `${n.getMonth()+1}/${n.getDate()}`;
 }
-function parseNotes(raw) {
-  if (!raw || !raw.trim()) return [];
-  return raw.split(' | ').filter(Boolean).map(p => {
-    const m = p.match(/^(.+?)\s*\((.+?)\):\s*(.+)$/);
-    return m ? { author: m[1], time: m[2], text: m[3] } : { author: 'Note', time: '', text: p };
+
+function jobIsToday(job) {
+  const todayName = getTodayDayName().toLowerCase();
+  return job.day.toLowerCase().startsWith(todayName);
+}
+
+// ── RENDERING ─────────────────────────────────────────────────
+function getFiltered() {
+  const crew = document.getElementById('crew-filter').value;
+  return jobs.filter(j => {
+    const dayOk = dayFilter === 'today' ? jobIsToday(j) : true;
+    const crewOk = crew === 'All Crew' || j.crew.toLowerCase().includes(crew.toLowerCase()) || crew.toLowerCase().split('/').some(c => j.crew.toLowerCase().includes(c.trim()));
+    return dayOk && crewOk;
   });
 }
-function serializeNotes(notes) {
-  return notes.map(n => `${n.author} (${n.time}): ${n.text}`).join(' | ');
-}
 
-async function writeJob(job) {
-  const reqs = [];
-  if (job._cStat >= 0) {
-    reqs.push(gapi.client.sheets.spreadsheets.values.update({
-      spreadsheetId: SHEET_ID,
-      range: `'${currentTabName}'!${colLetter(job._cStat)}${job.rowIndex}`,
-      valueInputOption: 'RAW',
-      resource: { values: [[statusToSheet(job.status)]] }
-    }));
-  }
-  if (job._cNotes >= 0) {
-    reqs.push(gapi.client.sheets.spreadsheets.values.update({
-      spreadsheetId: SHEET_ID,
-      range: `'${currentTabName}'!${colLetter(job._cNotes)}${job.rowIndex}`,
-      valueInputOption: 'RAW',
-      resource: { values: [[serializeNotes(job.notes)]] }
-    }));
-  }
-  try { await Promise.all(reqs); return true; }
-  catch(e) { console.error(e); showError('Save failed: ' + (e.result?.error?.message || e.message)); return false; }
-}
-
-function statusToSheet(s) { return s === 'in-progress' ? 'In Progress' : s === 'completed' ? 'Completed' : 'Scheduled'; }
-function colLetter(i) { let s=''; i++; while(i>0){const r=(i-1)%26;s=String.fromCharCode(65+r)+s;i=Math.floor((i-1)/26);} return s; }
-
-// ── RENDERING ────────────────────────────────────────────────
-function todayStr() { return new Date().toLocaleDateString('en-US',{month:'short',day:'numeric'}); }
-function tomorrowStr() { return new Date(Date.now()+86400000).toLocaleDateString('en-US',{month:'short',day:'numeric'}); }
-
-function jobMatchesDate(job) {
-  if (!job.date) return true;
-  const d = job.date.toLowerCase();
-  if (dateFilter === 'today') return d.includes(todayStr().toLowerCase()) || d === 'today';
-  if (dateFilter === 'tomorrow') return d.includes(tomorrowStr().toLowerCase()) || d === 'tomorrow';
-  return true;
-}
-function getFiltered() {
-  const w = document.getElementById('worker-filter').value;
-  return jobs.filter(j => jobMatchesDate(j) && (w === 'All Workers' || j.assignee === w));
-}
 function updateStats() {
-  const t = todayStr().toLowerCase();
-  document.getElementById('stat-today').textContent = jobs.filter(j => (j.date||'').toLowerCase().includes(t)).length;
+  const today = jobs.filter(jobIsToday);
+  document.getElementById('stat-crews').textContent = today.length;
   document.getElementById('stat-progress').textContent = jobs.filter(j => j.status === 'in-progress').length;
   document.getElementById('stat-done').textContent = jobs.filter(j => j.status === 'completed').length;
 }
-function populateWorkerFilter() {
-  const workers = [...new Set(jobs.map(j => j.assignee).filter(Boolean))];
-  document.getElementById('worker-filter').innerHTML = '<option>All Workers</option>' + workers.map(w => `<option>${esc(w)}</option>`).join('');
+
+function populateCrewFilter() {
+  // Get individual crew names (split by /)
+  const names = new Set();
+  jobs.forEach(j => j.crew.split('/').forEach(n => names.add(n.trim())));
+  const sel = document.getElementById('crew-filter');
+  sel.innerHTML = '<option>All Crew</option>' + [...names].sort().map(n => `<option>${esc(n)}</option>`).join('');
 }
+
 function renderJobs() {
   const list = document.getElementById('job-list');
   const filtered = getFiltered();
+
   if (!filtered.length) {
-    list.innerHTML = '<div class="empty">No jobs for these filters.<br><small>Try "All" or check that your sheet has today\'s date in the Date column.</small></div>';
+    list.innerHTML = `<div class="empty">No assignments found for these filters.<br><small>Try "Full Week" or check that today is within the current tab's date range.</small></div>`;
     return;
   }
-  list.innerHTML = filtered.map(job => {
-    const idx = jobs.indexOf(job);
-    return `<div class="job-card priority-${job.priority}" onclick="openJob(${idx})">
-      <div class="job-top">
-        <div style="flex:1;"><div class="job-title">${esc(job.title)}</div></div>
-        <span class="badge badge-${job.status==='in-progress'?'in-progress':job.status}">${statusLabel(job.status)}</span>
-      </div>
-      <div class="job-meta">
-        ${job.assignee?`👤 ${esc(job.assignee)}`:''}${job.assignee&&job.time?' &nbsp;·&nbsp; ':''}${job.time?`🕐 ${esc(job.time)}`:''}${job.date?` &nbsp;·&nbsp; 📅 ${esc(job.date)}`:''}
-      </div>
-      ${job.address?`<div class="job-address">📍 ${esc(job.address)}</div>`:''}
-      <div class="job-footer">${job.notes.length?`<span>💬 ${job.notes.length} note${job.notes.length>1?'s':''}</span>`:''}</div>
-    </div>`;
-  }).join('');
+
+  // Group by day
+  const byDay = {};
+  filtered.forEach(j => {
+    if (!byDay[j.day]) byDay[j.day] = [];
+    byDay[j.day].push(j);
+  });
+
+  let html = '';
+  for (const day of Object.keys(byDay)) {
+    const isToday = byDay[day][0] && jobIsToday(byDay[day][0]);
+    html += `<div class="day-header">${esc(day)}${isToday ? ' <span style="font-size:12px;color:var(--blue);font-family:DM Sans,sans-serif;font-weight:700;text-transform:none;letter-spacing:0;">← Today</span>' : ''}</div>`;
+    byDay[day].forEach(job => {
+      const idx = jobs.indexOf(job);
+      const hasPm = !!job.pmTask;
+      html += `
+        <div class="job-card ${hasPm?'has-pm':''}" onclick="openJob(${idx})">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:8px;">
+            <div class="job-crew">${esc(job.crew)}</div>
+            <span class="badge badge-${job.status==='in-progress'?'in-progress':job.status}">${statusLabel(job.status)}</span>
+          </div>
+          ${job.amTask ? `<div class="job-task-label">☀️ Morning</div><div class="job-task">${esc(job.amTask)}</div>` : ''}
+          ${job.pmTask ? `<div class="job-task-label" style="margin-top:6px;">🌤️ Afternoon</div><div class="job-task">${esc(job.pmTask)}</div>` : ''}
+          ${job.location ? `<div style="font-size:12px;color:var(--muted);margin-top:8px;">📍 ${esc(job.location)}</div>` : ''}
+          <div class="job-footer">
+            ${job.notes.length ? `<span>💬 ${job.notes.length} note${job.notes.length>1?'s':''}</span>` : ''}
+          </div>
+        </div>`;
+    });
+  }
+  list.innerHTML = html;
 }
 
+// ── DETAIL ────────────────────────────────────────────────────
 function openJob(idx) {
   currentJobIdx = idx;
   const job = jobs[idx];
   document.getElementById('app-screen').style.display = 'none';
   document.getElementById('detail-screen').style.display = 'block';
-  document.getElementById('detail-badges').innerHTML = `
-    <span class="badge badge-${job.status==='in-progress'?'in-progress':job.status}">${statusLabel(job.status)}</span>
-    <span class="badge" style="background:${priBg(job.priority)};color:${priColor(job.priority)};">${job.priority} priority</span>`;
-  document.getElementById('detail-title').textContent = job.title;
-  document.getElementById('detail-meta').innerHTML = `
-    ${job.time?`<div class="detail-item">🕐 ${esc(job.time)}</div>`:''}
-    ${job.date?`<div class="detail-item">📅 ${esc(job.date)}</div>`:''}
-    ${job.assignee?`<div class="detail-item">👤 ${esc(job.assignee)}</div>`:''}
-    <div class="detail-item" style="font-size:11px;color:var(--muted);">Sheet row ${job.rowIndex}</div>`;
-  renderDetailTab('details'); renderDetailTab('notes'); setTab('details');
+
+  document.getElementById('detail-crew').textContent = job.crew;
+  document.getElementById('detail-day').textContent = job.day;
+  const badge = document.getElementById('detail-status-badge');
+  badge.className = `badge badge-${job.status==='in-progress'?'in-progress':job.status}`;
+  badge.textContent = statusLabel(job.status);
+
+  renderDetailTab('tasks'); renderDetailTab('notes'); setTab('tasks');
 }
 
 function renderDetailTab(tab) {
   const job = jobs[currentJobIdx]; if (!job) return;
-  if (tab === 'details') {
-    document.getElementById('tab-content-details').innerHTML = `
-      ${job.address ? `
+
+  if (tab === 'tasks') {
+    // Extract address from task text if present
+    const addressMatch = (job.amTask + ' ' + job.pmTask).match(/\(([^)]*\d{3,}[^)]*)\)/);
+    const address = job.location || (addressMatch ? addressMatch[1] : '');
+
+    document.getElementById('tab-content-tasks').innerHTML = `
+      ${job.amTask ? `<div class="task-block"><div class="task-time-label">☀️ 8am – 12pm</div><div class="task-text">${esc(job.amTask)}</div></div>` : ''}
+      ${job.pmTask ? `<div class="task-block"><div class="task-time-label pm">🌤️ 12:30pm onwards</div><div class="task-text">${esc(job.pmTask)}</div></div>` : ''}
+      ${address ? `
         <div class="section-card">
-          <div class="section-label">📍 Job Site</div>
-          <div style="font-size:15px;color:#C4C8DC;margin-bottom:14px;line-height:1.4;">${esc(job.address)}</div>
-          <a class="directions-btn" href="https://maps.google.com/?q=${encodeURIComponent(job.address)}" target="_blank">🗺️ Get Directions</a>
-        </div>` : `<div class="empty" style="padding:20px 0;">No address in sheet for this job.</div>`}
+          <div class="section-label">📍 Location</div>
+          <div style="font-size:14px;color:#C4C8DC;margin-bottom:14px;">${esc(address)}</div>
+          <a class="directions-btn" href="https://maps.google.com/?q=${encodeURIComponent(address)}" target="_blank">🗺️ Get Directions</a>
+        </div>` : ''}
       <div class="section-card">
-        <div class="section-label">Update Status <span class="saving-indicator" id="status-saving"></span></div>
+        <div class="section-label">Update Status <span class="saving-pill" id="status-saving"></span></div>
         <div class="status-row">
           <button class="status-btn ${job.status==='scheduled'?'active-scheduled':''}" onclick="updateStatus('scheduled')">Scheduled</button>
           <button class="status-btn ${job.status==='in-progress'?'active-progress':''}" onclick="updateStatus('in-progress')">In Progress</button>
@@ -503,8 +532,9 @@ function renderDetailTab(tab) {
         </div>
       </div>`;
   }
+
   if (tab === 'notes') {
-    const authorLabel = currentRole === 'office' ? '🏢 Office' : '🔧 Field Worker';
+    const authorLabel = currentRole === 'office' ? '🏢 Office' : '🔧 Field';
     document.getElementById('tab-content-notes').innerHTML = `
       ${job.notes.length ? job.notes.map(n => `
         <div class="note-card">
@@ -515,59 +545,62 @@ function renderDetailTab(tab) {
           <div class="note-text">${esc(n.text)}</div>
         </div>`).join('') : '<div class="empty" style="padding:20px 0;">No notes yet</div>'}
       <div class="note-input-area">
-        <div class="section-label">Add Note as ${authorLabel} <span class="saving-indicator" id="note-saving"></span></div>
+        <div class="section-label">Add Note as ${authorLabel} <span class="saving-pill" id="note-saving"></span></div>
         <textarea class="note-input" id="note-input" placeholder="Type a note..."></textarea>
-        <button class="post-btn" id="post-btn" onclick="postNote()">Post Note → Saves to Sheet</button>
+        <button class="post-btn" id="post-btn" onclick="postNote()">Post Note</button>
       </div>`;
   }
 }
 
-async function updateStatus(status) {
+function updateStatus(status) {
   const job = jobs[currentJobIdx]; if (!job) return;
   job.status = status;
-  setSaving('status-saving', 'Saving...');
-  const ok = await writeJob(job);
-  setSaved('status-saving', ok);
-  renderDetailTab('details'); updateStats();
-  document.getElementById('detail-badges').querySelector('.badge').className = `badge badge-${status==='in-progress'?'in-progress':status}`;
-  document.getElementById('detail-badges').querySelector('.badge').textContent = statusLabel(status);
+  localStatuses[jobKey(job)] = status;
+  localStorage.setItem('fs_statuses', JSON.stringify(localStatuses));
+
+  const badge = document.getElementById('detail-status-badge');
+  badge.className = `badge badge-${status==='in-progress'?'in-progress':status}`;
+  badge.textContent = statusLabel(status);
+
+  setSaving('status-saving', '✓ Saved');
+  setTimeout(() => setSaving('status-saving', ''), 2000);
+  renderDetailTab('tasks'); updateStats();
 }
 
-async function postNote() {
+function postNote() {
   const input = document.getElementById('note-input');
   const btn = document.getElementById('post-btn');
   const text = input?.value?.trim(); if (!text) return;
   const job = jobs[currentJobIdx];
   const now = new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
-  const userName = document.getElementById('user-name').textContent || (currentRole==='office'?'Office':'Field Worker');
+  const userName = document.getElementById('user-name').textContent || (currentRole==='office'?'Office':'Field');
   job.notes.push({ author: currentRole==='office'?'Office':userName, text, time: now });
-  btn.disabled = true; btn.textContent = 'Saving...';
-  setSaving('note-saving', 'Saving...');
-  const ok = await writeJob(job);
-  btn.disabled = false; btn.textContent = 'Post Note → Saves to Sheet';
-  setSaved('note-saving', ok);
+  localNotes[jobKey(job)] = job.notes;
+  localStorage.setItem('fs_notes', JSON.stringify(localNotes));
+  setSaving('note-saving', '✓ Saved');
+  setTimeout(() => setSaving('note-saving', ''), 2000);
   renderDetailTab('notes');
 }
 
-function setSaving(id, msg) { const el = document.getElementById(id); if(el){el.textContent=msg;el.className='saving-indicator saving';} }
-function setSaved(id, ok) { const el = document.getElementById(id); if(el){el.textContent=ok?'✓ Saved':'✗ Failed';el.className=`saving-indicator ${ok?'saved':'saving'}`;setTimeout(()=>{if(el)el.textContent='';},3000); } }
-
+// ── UI HELPERS ────────────────────────────────────────────────
 function showList() { document.getElementById('detail-screen').style.display='none'; document.getElementById('app-screen').style.display='block'; renderJobs(); }
 function setTab(tab) {
   currentTab=tab;
-  ['details','notes'].forEach(t => {
+  ['tasks','notes'].forEach(t => {
     document.getElementById(`tab-${t}`).classList.toggle('active',t===tab);
     document.getElementById(`tab-content-${t}`).style.display=t===tab?'block':'none';
   });
 }
-function setDateFilter(f,btn) { dateFilter=f; document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); renderJobs(); }
+function setDayFilter(f,btn) { dayFilter=f; document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); renderJobs(); }
 function setRole(r,btn) { currentRole=r; document.querySelectorAll('.role-btn').forEach(b=>{b.className='role-btn';}); btn.classList.add(r==='office'?'active-office':'active-field'); }
-function showBanner(msg) { const el=document.getElementById('sheet-banner'); el.innerHTML=msg; el.style.display='flex'; }
-function showError(msg) { const el=document.getElementById('error-banner'); el.textContent='⚠️ '+msg; el.style.display='block'; }
-function hideError() { document.getElementById('error-banner').style.display='none'; }
+function setBanner(msg, type) {
+  const el = document.getElementById('main-banner');
+  if (!msg) { el.style.display='none'; return; }
+  el.className = `banner banner-${type}`;
+  el.innerHTML = msg; el.style.display = 'block';
+}
+function setSaving(id, msg) { const el=document.getElementById(id); if(el){el.textContent=msg; el.className='saving-pill saved';} }
 function statusLabel(s) { return s==='in-progress'?'In Progress':s.charAt(0).toUpperCase()+s.slice(1); }
-function priColor(p) { return p==='high'?'var(--red)':p==='medium'?'var(--amber)':'var(--green)'; }
-function priBg(p) { return p==='high'?'var(--red-dim)':p==='medium'?'var(--amber-dim)':'var(--green-dim)'; }
 function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 </script>
 
