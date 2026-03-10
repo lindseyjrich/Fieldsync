@@ -291,6 +291,19 @@ async function showApp() {
 
 // ── FIND CURRENT WEEK TAB ─────────────────────────────────────
 function findCurrentTab(titles) {
+  // Prioritize .26 tabs (2026)
+  const tabs26 = titles.filter(t => t.trim().endsWith(".26"));
+  const now = new Date();
+  for (const t of tabs26) {
+    const m = t.match(/^(\d+)\.(\d+)\s*[-2013]\s*(\d+)\.(\d+)/);
+    if (!m) continue;
+    const start = new Date(2026, parseInt(m[1])-1, parseInt(m[2]));
+    const end = new Date(2026, parseInt(m[3])-1, parseInt(m[4]), 23, 59, 59);
+    if (now >= start && now <= end) return t;
+  }
+  if (tabs26.length > 0) return tabs26[tabs26.length-1];
+  // OLD CODE BELOW - will be skipped if .26 tab found
+  const _now = new Date();
   const now = new Date();
   const nowM = now.getMonth() + 1;
   const nowD = now.getDate();
